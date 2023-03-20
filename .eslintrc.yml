@@ -3,6 +3,7 @@ env:
   node: true
 extends:
   - bayathy
+  - plugin:tailwindcss/recommended
 
 parser: '@typescript-eslint/parser'
 parserOptions:

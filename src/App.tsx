@@ -1,8 +1,9 @@
-import { Text } from '@mantine/core'
-import { useState } from 'react'
+import type { FC } from 'react'
 
-function App() {
-  return <div className="App"></div>
+export const App: FC = () => {
+  return (
+    <div>
+      <p className="w-16 text-3xl">Hello World</p>
+    </div>
+  )
 }
-
-export default App
