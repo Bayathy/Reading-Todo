@@ -4,7 +4,7 @@ import { DropDownMenu } from '../DropDownMenu'
 
 export const Header: FC = () => (
   <header className="h-max border-b-2">
-    <div className="flex h-16 items-center">
+    <div className="m-auto flex h-16 w-full max-w-4xl items-center">
       <h1 className="m-auto text-center text-xl">記事一覧</h1>
       <div className="absolute right-4">
         <DropDownMenu />
