@@ -16,7 +16,7 @@ export const Card: FC = () => (
       <p>追加日: 2022-12-31</p>
       <div className="flex gap-2">
         <button
-          className="text-3xl hover:text-blue-500"
+          className="text-3xl hover:text-green-600"
           aria-label="reading done"
         >
           <Icon icon="material-symbols:check-circle-outline" />
