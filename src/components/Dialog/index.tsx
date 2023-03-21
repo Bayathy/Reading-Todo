@@ -7,7 +7,7 @@ export const Dialog: FC = () => {
   return (
     <RadixDialog.Root>
       <RadixDialog.Trigger asChild>
-        <button className="rounded-xl bg-blue-500 py-2 px-4 text-white">
+        <button className="rounded-xl bg-blue-400 py-2 px-4 text-white hover:bg-blue-500">
           追加する
         </button>
       </RadixDialog.Trigger>
@@ -45,7 +45,7 @@ export const Dialog: FC = () => {
           </fieldset>
           <div className="mt-[25px] flex items-center justify-end">
             <RadixDialog.Close asChild>
-              <button className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7 inline-flex h-8 items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+              <button className="inline-flex h-8 items-center justify-center rounded-md bg-green-200 px-4 font-medium leading-none text-green-600 hover:bg-green-300 focus:outline-none">
                 Save changes
               </button>
             </RadixDialog.Close>
