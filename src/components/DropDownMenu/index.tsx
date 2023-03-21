@@ -1,6 +1,8 @@
 import type { FC } from 'react'
 import { useState } from 'react'
 
+import { Icon } from '@iconify/react'
+
 export const DropDownMenu: FC = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -9,9 +11,9 @@ export const DropDownMenu: FC = () => {
       <button
         aria-label="Open DropDown Menu"
         onClick={() => setOpen(!isOpen)}
-        className="relative rounded-xl bg-blue-400 py-2 px-4 text-white hover:bg-blue-500"
+        className="relative rounded-full p-2 text-3xl active:bg-gray-300"
       >
-        Menu
+        <Icon icon="material-symbols:menu" />
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 rounded-md bg-white shadow-md shadow-gray-600">
