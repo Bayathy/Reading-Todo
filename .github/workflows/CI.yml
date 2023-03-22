@@ -1,12 +1,14 @@
 name: Lint
 
 on:
-  push:
-    - dev
+  pull_request:
+    types:
+      - opened
 
 jobs:
   CI:
     name: Lint
+    if:  startsWith(github.head_ref, 'dev')
     runs-on: ubuntu-latest
     strategy:
       matrix:
