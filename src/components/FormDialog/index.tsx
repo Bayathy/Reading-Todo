@@ -1,25 +1,43 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import type { FC } from 'react'
+import { useState } from 'react'
 
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { useForm } from 'react-hook-form'
+import { useSetRecoilState } from 'recoil'
 
-export type FormState = {
-  url: string
-  title: string
-}
+import { articleListState } from '../../store'
+
+import type { Article } from '../../types'
+import type { SubmitHandler } from 'react-hook-form'
+
+export type FormState = Article
 
 export const FormDialog: FC = () => {
+  const [open, setOpen] = useState<boolean>(false)
+
   const { register, handleSubmit } = useForm<FormState>({
     mode: 'onChange',
     defaultValues: { url: '', title: '' },
   })
 
+  const setArticleList = useSetRecoilState(articleListState)
+
   // eslint-disable-next-line unicorn/consistent-function-scoping
-  const onSubmit = (data: unknown) => console.log(data)
+  const onSubmit: SubmitHandler<FormState> = data => {
+    if (data.title && data.url) {
+      setArticleList(oldArticleList => [
+        ...oldArticleList,
+        {
+          ...data,
+        },
+      ])
+    }
+    setOpen(false)
+  }
 
   return (
-    <RadixDialog.Root>
+    <RadixDialog.Root open={open} onOpenChange={setOpen}>
       <RadixDialog.Trigger asChild>
         <button className="rounded-xl bg-blue-400 py-2 px-4 text-white hover:bg-blue-500">
           追加する
@@ -73,7 +91,6 @@ export const FormDialog: FC = () => {
                 {...register('url')}
               />
             </fieldset>
-
             <div className="mt-[25px] flex items-center justify-end">
               <button
                 type="submit"
