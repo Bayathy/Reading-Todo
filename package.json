@@ -19,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.7",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "urql": "^4.0.0"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.0",
@@ -42,6 +43,7 @@
     "eslint-config-bayathy": "^1.0.39",
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-tailwindcss": "^3.10.1",
+    "msw": "^1.2.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prop-types": "15.8.1",
