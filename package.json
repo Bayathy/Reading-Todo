@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.1.0",
+    "@markuplint/jsx-parser": "^3.6.1",
+    "@markuplint/react-spec": "^3.6.1",
     "@radix-ui/colors": "^0.1.8",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/react": "^18.0.28",
