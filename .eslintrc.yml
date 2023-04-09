@@ -10,6 +10,10 @@ parser: '@typescript-eslint/parser'
 parserOptions:
   project: ./tsconfig.json
 
+settings:
+  "tailwindcss":
+      "whitelist": [ "line-clamp\\-[1-4]" ]
+
 rules:
   "import/no-unresolved": off
   "unicorn/prevent-abbreviations": off
