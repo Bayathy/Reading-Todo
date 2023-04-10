@@ -8,7 +8,13 @@ export type ArticleCardProps = {
   url: string
   createdAt: Date
 }
+
+const deleteArticle = (id: number) => {
+  console.log(id)
+}
+
 export const ArticleCard: FC<ArticleCardProps> = ({
+  id,
   title,
   url,
   createdAt,
@@ -26,7 +32,11 @@ export const ArticleCard: FC<ArticleCardProps> = ({
           <button aria-label="done reading" className="hover:text-green-600">
             <InlineIcon icon={'mdi:check-circle'} />
           </button>
-          <button aria-label="delete article" className="hover:text-red-600">
+          <button
+            onClick={() => deleteArticle(id)}
+            aria-label="delete article"
+            className="hover:text-red-600"
+          >
             <InlineIcon icon={'mdi:trash'} />
           </button>
         </div>
