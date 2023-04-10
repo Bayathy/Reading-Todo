@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import './style/global.css'
-import { Home } from '@/components/view/Home/Home'
+import '@/style/global.css'
+import { Home } from 'src/components/pages'
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line unicorn/prefer-top-level-await
