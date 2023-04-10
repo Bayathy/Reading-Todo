@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import { InlineIcon } from '@iconify/react'
 
 export type ArticleCardProps = {
+  id: number
   title: string
   url: string
   createdAt: Date
