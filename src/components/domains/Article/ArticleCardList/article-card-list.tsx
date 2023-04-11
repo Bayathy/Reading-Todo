@@ -1,8 +1,8 @@
 import type { FC } from 'react'
 
-import type { ArticleCardProps } from '@/components/domains/Article/ArticleCard/ArticleCard'
+import type { ArticleCardProps } from '@/components/domains/Article/ArticleCard/article-card'
 
-import { ArticleCard } from '@/components/domains/Article/ArticleCard/ArticleCard'
+import { ArticleCard } from '@/components/domains/Article/ArticleCard/article-card'
 
 export type ArticleListProps = {
   articleList: ArticleCardProps[]

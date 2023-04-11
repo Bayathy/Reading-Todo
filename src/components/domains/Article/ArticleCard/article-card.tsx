@@ -7,17 +7,16 @@ export type ArticleCardProps = {
   title: string
   url: string
   createdAt: Date
-}
-
-const deleteArticle = (id: number) => {
-  console.log(id)
+  deleteFunction: () => void
+  doneFunction: () => void
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({
-  id,
   title,
   url,
   createdAt,
+  doneFunction,
+  deleteFunction,
 }) => {
   return (
     <div className="w-full max-w-md rounded-2xl border-2 border-gray-500 p-4">
@@ -29,11 +28,15 @@ export const ArticleCard: FC<ArticleCardProps> = ({
       <div className="mt-2  flex items-center justify-between">
         <p className="text-xl font-bold leading-none">{createdAt.getDate()}</p>
         <div className="flex  gap-2 text-3xl">
-          <button aria-label="done reading" className="hover:text-green-600">
+          <button
+            onClick={doneFunction}
+            aria-label="done reading"
+            className="hover:text-green-600"
+          >
             <InlineIcon icon={'mdi:check-circle'} />
           </button>
           <button
-            onClick={() => deleteArticle(id)}
+            onClick={deleteFunction}
             aria-label="delete article"
             className="hover:text-red-600"
           >

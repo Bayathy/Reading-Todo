@@ -19,18 +19,36 @@ export const Default: Story = {
         title: 'TestTitle1',
         url: '/',
         createdAt: new Date('2022-12-31T13:50:40+09:00'),
+        deleteFunction: () => {
+          console.log('test')
+        },
+        doneFunction: () => {
+          console.log('test')
+        },
       },
       {
-        id: 2,
-        title: 'TestTitle2',
+        id: 1,
+        title: 'TestTitle1',
         url: '/',
         createdAt: new Date('2022-12-31T13:50:40+09:00'),
+        deleteFunction: () => {
+          console.log('test')
+        },
+        doneFunction: () => {
+          console.log('test')
+        },
       },
       {
-        id: 3,
-        title: 'TestTitle3',
+        id: 1,
+        title: 'TestTitle1',
         url: '/',
         createdAt: new Date('2022-12-31T13:50:40+09:00'),
+        deleteFunction: () => {
+          console.log('test')
+        },
+        doneFunction: () => {
+          console.log('test')
+        },
       },
     ],
   },
