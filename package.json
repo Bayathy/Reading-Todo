@@ -11,7 +11,8 @@
     "lint:fix": "eslint src --fix && npm run fmt",
     "fmt": "prettier --write src",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "codegen": "graphql-codegen"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.3",
@@ -25,6 +26,9 @@
     "urql": "^4.0.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/client-preset": "^3.0.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@iconify/react": "^4.1.0",
     "@markuplint/jsx-parser": "^3.6.1",
     "@markuplint/react-spec": "^3.6.1",
