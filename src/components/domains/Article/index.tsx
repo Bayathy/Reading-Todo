@@ -1,1 +1,2 @@
-export { ArticleCardList } from '@/components/domains/Article/ArticleCardList/article-card-list'
+export { ArticleCardList } from './ArticleCardList/article-card-list'
+export type { ArticleModel } from './model'

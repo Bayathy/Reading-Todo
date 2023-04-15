@@ -16,39 +16,35 @@ export const Default: Story = {
     articleList: [
       {
         id: 1,
-        title: 'TestTitle1',
-        url: '/',
+        title: 'Title1',
+        url: './',
+        done: false,
+        userId: 'uuid',
         createdAt: new Date('2022-12-31T13:50:40+09:00'),
-        deleteFunction: () => {
-          console.log('test')
-        },
-        doneFunction: () => {
-          console.log('test')
-        },
       },
       {
-        id: 1,
-        title: 'TestTitle1',
-        url: '/',
-        createdAt: new Date('2022-12-31T13:50:40+09:00'),
-        deleteFunction: () => {
-          console.log('test')
-        },
-        doneFunction: () => {
-          console.log('test')
-        },
+        id: 2,
+        title: 'Title2',
+        url: './',
+        done: false,
+        userId: 'uuid',
+        createdAt: new Date('2023-01-01T13:50:40+09:00'),
       },
       {
-        id: 1,
-        title: 'TestTitle1',
-        url: '/',
-        createdAt: new Date('2022-12-31T13:50:40+09:00'),
-        deleteFunction: () => {
-          console.log('test')
-        },
-        doneFunction: () => {
-          console.log('test')
-        },
+        id: 3,
+        title: 'Title3',
+        url: './',
+        done: false,
+        userId: 'uuid',
+        createdAt: new Date('2022-01-01T13:40:40+09:00'),
+      },
+      {
+        id: 4,
+        title: 'Title4',
+        url: './',
+        done: false,
+        userId: 'uuid',
+        createdAt: new Date('2021-12-31T13:50:40+09:00'),
       },
     ],
   },

@@ -1,3 +1,3 @@
-export const createArticle = (id: number) => {
+export const doneArticle = (id: number) => {
   console.log(id)
 }
