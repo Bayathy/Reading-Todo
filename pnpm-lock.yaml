@@ -36,6 +36,9 @@ devDependencies:
   '@graphql-codegen/client-preset':
     specifier: ^3.0.0
     version: 3.0.0(graphql@16.6.0)
+  '@graphql-codegen/typescript-operations':
+    specifier: ^3.0.3
+    version: 3.0.3(graphql@16.6.0)
   '@graphql-typed-document-node/core':
     specifier: ^3.2.0
     version: 3.2.0(graphql@16.6.0)

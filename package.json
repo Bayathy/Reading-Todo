@@ -12,7 +12,8 @@
     "fmt": "prettier --write src",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "codegen": "graphql-codegen"
+    "codegen": "graphql-codegen",
+    "markuplint": "markuplint \\\"./src/**/*.{jsx,tsx}\\\""
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.3",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^3.3.0",
     "@graphql-codegen/client-preset": "^3.0.0",
+    "@graphql-codegen/typescript-operations": "^3.0.3",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@iconify/react": "^4.1.0",
     "@markuplint/jsx-parser": "^3.6.1",
