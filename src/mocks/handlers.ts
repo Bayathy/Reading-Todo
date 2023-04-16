@@ -1,6 +1,7 @@
 import { graphql } from 'msw'
+
 export const handlers = [
-  graphql.query('GetArticles', (req, res, ctx) => {
+  graphql.query('GetAllArticles', (req, res, ctx) => {
     const { uuid } = req.variables
     return res(
       ctx.data({
