@@ -22,7 +22,8 @@ export const ViewArticleForm: FC = () => {
             className="rounded-md border-2"
             aria-label="input url"
             type="text"
-            {...register('url')}
+            {...register('url', { required: true })}
+            required
           />
           <label htmlFor="title">タイトルを入力</label>
           <input
@@ -30,7 +31,7 @@ export const ViewArticleForm: FC = () => {
             className="rounded-md border-2"
             aria-label="input url"
             type="text"
-            {...register('title')}
+            {...register('title', { required: true })}
           />
         </div>
         <div className={'mt-4 flex justify-end'}>
