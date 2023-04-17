@@ -5,7 +5,7 @@ export type HeaderProps = {
 }
 export const Header: FC<HeaderProps> = ({ text }) => {
   return (
-    <header className="h-16 w-full border-b-2 shadow-md">
+    <header className="h-16 w-full border-b-2 ">
       <div className="m-auto flex h-full items-center px-4">
         <h1 className="text-2xl">{text}</h1>
       </div>
