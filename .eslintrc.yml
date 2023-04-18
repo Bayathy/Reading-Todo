@@ -13,10 +13,13 @@ parserOptions:
 settings:
   "tailwindcss":
       "whitelist": [ "line-clamp\\-[1-4]" ]
+  import/ignore:
+    - node_modules
 
 rules:
   "import/no-unresolved": off
   "unicorn/prevent-abbreviations": off
   "react/no-unknown-property": off
   "unicorn/filename-case": off
+  "unicorn/no-null": off
   "@next/next/no-img-element": off
