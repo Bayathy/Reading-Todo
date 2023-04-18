@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import '@/style/global.css'
-import { Home } from 'src/components/pages'
+import { Home } from '@/components/pages'
+import { StoreProvider } from '@/components/providers'
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line unicorn/prefer-top-level-await
@@ -13,6 +14,8 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <React.StrictMode>
-    <Home />
+    <StoreProvider>
+      <Home />
+    </StoreProvider>
   </React.StrictMode>,
 )

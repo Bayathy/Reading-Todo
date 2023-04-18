@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/named
 import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {

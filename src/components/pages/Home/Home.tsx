@@ -70,7 +70,7 @@ export const Home: FC = () => {
             記事の追加
           </Button>
         </div>
-        <section className="mt-4">
+        <section className="m-auto mt-4">
           <ViewArticleList />
         </section>
       </main>

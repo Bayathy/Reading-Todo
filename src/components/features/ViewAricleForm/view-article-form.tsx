@@ -12,34 +12,33 @@ export const ViewArticleForm: FC = () => {
       <form
         onSubmit={handleSubmit(onArticleFormSubmit)}
         aria-label="article input form"
-        className="m-auto w-4/5"
+        className="m-auto w-full md:w-4/5 "
       >
         <h2 className="my-2 text-xl font-bold">記事を追加する</h2>
         <div className="flex flex-col justify-center gap-2">
           <label htmlFor="url">URLを入力</label>
           <input
             id="url"
-            className="rounded-md border-2"
+            className="h-12 rounded-md border-2 px-2 text-lg"
             aria-label="input url"
             type="text"
+            placeholder={'https://'}
             {...register('url', { required: true })}
             required
           />
           <label htmlFor="title">タイトルを入力</label>
           <input
             id="title"
-            className="rounded-md border-2"
+            className="h-12 rounded-md border-2 px-2 text-lg"
             aria-label="input url"
             type="text"
             {...register('title', { required: true })}
           />
         </div>
         <div className={'mt-4 flex justify-end'}>
-          <Button
-            disabled={!(isDirty && isValid)}
-            label={'保存する'}
-            color={'primary'}
-          />
+          <Button disabled={!(isDirty && isValid)} color={'primary'}>
+            保存する
+          </Button>
         </div>
       </form>
     </div>
