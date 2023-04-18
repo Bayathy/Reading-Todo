@@ -1,1 +1,1 @@
-export { Home } from './Home/Home'
+export { Home } from '@/components/pages/Home/Home'
