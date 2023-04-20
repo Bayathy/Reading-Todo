@@ -4,10 +4,15 @@ env:
 extends:
   - bayathy
   - plugin:tailwindcss/recommended
+  - plugin:storybook/recommended
 
 parser: '@typescript-eslint/parser'
 parserOptions:
   project: ./tsconfig.json
+
+settings:
+  "tailwindcss":
+      "whitelist": [ "line-clamp\\-[1-4]" ]
 
 rules:
   "import/no-unresolved": off
