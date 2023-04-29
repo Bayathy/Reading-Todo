@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n": types.CreateArticleDocument,
+    "\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      title\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n": types.CreateArticleDocument,
     "\n  query getAllArticles {\n    articles {\n      url\n    }\n  }\n": types.GetAllArticlesDocument,
 };
 
@@ -34,7 +34,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n"): (typeof documents)["\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n"];
+export function graphql(source: "\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      title\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n"): (typeof documents)["\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      title\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

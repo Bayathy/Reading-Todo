@@ -18,6 +18,7 @@ export const Home: FC = () => {
     setArticleList([
       {
         id: 1,
+        title: 'test1',
         url: './',
         done: false,
         userId: 'uuid',
@@ -25,6 +26,7 @@ export const Home: FC = () => {
       },
       {
         id: 2,
+        title: 'test1',
         url: './',
         done: false,
         userId: 'uuid',
@@ -32,6 +34,7 @@ export const Home: FC = () => {
       },
       {
         id: 3,
+        title: 'test1',
         url: './',
         done: false,
         userId: 'uuid',
@@ -39,6 +42,7 @@ export const Home: FC = () => {
       },
       {
         id: 4,
+        title: 'test1',
         url: './',
         done: false,
         userId: 'uuid',
@@ -46,6 +50,7 @@ export const Home: FC = () => {
       },
       {
         id: 5,
+        title: 'test1',
         url: './',
         done: false,
         userId: 'uuid',

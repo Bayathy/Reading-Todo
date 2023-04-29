@@ -44,6 +44,7 @@ export const useCreateArticleForm = () => {
           ...oldList,
           {
             id: Number(newRecord.id),
+            title: newRecord.title,
             url: newRecord.url,
             userId: newRecord.userId,
             createdAt: newRecord.createdAt,
