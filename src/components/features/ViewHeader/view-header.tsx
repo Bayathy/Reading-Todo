@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 
 import { useAuth } from '@/components/shared/api/firebase/useAuth'
-import { Button } from '@/components/ui'
+import { Button } from '@/components/shared/ui'
 
 export type HeaderProps = {
   text: string

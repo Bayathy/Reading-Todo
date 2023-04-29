@@ -8,8 +8,8 @@ import { ViewArticleList } from '@/components/features/ViewArticleList'
 import { ViewHeader } from '@/components/features/ViewHeader'
 import { ViewTab } from '@/components/features/ViewTab'
 import { articleListStore } from '@/components/shared/store/article-store'
-import { Button, Modal } from '@/components/ui'
-import { useModal } from '@/components/ui/Modal/api/useModal'
+import { Button, Modal } from '@/components/shared/ui'
+import { useModal } from '@/components/shared/ui/Modal/api/useModal'
 
 export const Home: FC = () => {
   const setArticleList = useSetRecoilState(articleListStore)
@@ -18,7 +18,6 @@ export const Home: FC = () => {
     setArticleList([
       {
         id: 1,
-        title: 'Title1',
         url: './',
         done: false,
         userId: 'uuid',
@@ -26,7 +25,6 @@ export const Home: FC = () => {
       },
       {
         id: 2,
-        title: 'Title2',
         url: './',
         done: false,
         userId: 'uuid',
@@ -34,7 +32,6 @@ export const Home: FC = () => {
       },
       {
         id: 3,
-        title: 'Title3',
         url: './',
         done: false,
         userId: 'uuid',
@@ -42,7 +39,6 @@ export const Home: FC = () => {
       },
       {
         id: 4,
-        title: 'Title4',
         url: './',
         done: false,
         userId: 'uuid',
@@ -50,7 +46,6 @@ export const Home: FC = () => {
       },
       {
         id: 5,
-        title: 'Title4',
         url: './',
         done: false,
         userId: 'uuid',

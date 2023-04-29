@@ -3,7 +3,7 @@ import { graphql } from '@/gql'
 export const getArticles = graphql(/*GraphQL */ `
   query getAllArticles {
     articles {
-      title
+      url
     }
   }
 `)

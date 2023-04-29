@@ -6,17 +6,12 @@ import type { ArticleModel } from '@/components/domains/Article'
 
 import { deleteArticle } from '@/components/domains/Article/ArticleCard/api/delete-article'
 import { doneArticle } from '@/components/domains/Article/ArticleCard/api/done-article'
-export const ArticleCard: FC<ArticleModel> = ({
-  title,
-  url,
-  createdAt,
-  id,
-}) => {
+export const ArticleCard: FC<ArticleModel> = ({ url, createdAt, id }) => {
   return (
     <div className="w-80 rounded-2xl border-4 border-black p-4 shadow-xl">
       <div className="h-16">
         <h1 className="line-clamp-2 text-xl font-bold hover:text-blue-500">
-          <a href={url}>{title}</a>
+          <a href={url}>testTitle</a>
         </h1>
       </div>
       <div className="mt-2  flex items-center justify-between">
