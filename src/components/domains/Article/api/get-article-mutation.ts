@@ -1,6 +1,6 @@
 import { graphql } from '@/gql'
 
-export const getArticles = graphql(/*GraphQL */ `
+export const getArticlesQuery = graphql(/*GraphQL */ `
   query getAllArticles {
     articles {
       id

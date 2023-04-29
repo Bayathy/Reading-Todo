@@ -4,5 +4,5 @@ export type ArticleModel = {
   url: string
   done: boolean
   userId: string
-  createdAt: Date
+  createdAt: string
 }

@@ -8,7 +8,7 @@ import * as z from 'zod'
 import type { NewArticle } from '@/gql/graphql'
 import type { SubmitHandler } from 'react-hook-form'
 
-import { createArticle } from '@/components/domains/Article/api/createArticle'
+import { createArticleMutation } from '@/components/domains/Article/api/create-article-mutation'
 import { articleListStore } from '@/components/shared/store/article-store'
 
 const scheme = z.object({
@@ -28,13 +28,15 @@ export const useCreateArticleForm = () => {
   })
   const setArticleList = useSetRecoilState(articleListStore)
 
-  const [newArticleResult, createNewArticle] = useMutation(createArticle)
+  const [newArticleResult, createNewArticle] = useMutation(
+    createArticleMutation,
+  )
   // eslint-disable-next-line unicorn/consistent-function-scoping
   const onArticleFormSubmit: SubmitHandler<ArticleFormState> = useCallback(
     async data => {
       const variables: NewArticle = { userId: 'test', url: data.url }
-      const res = await createNewArticle({ input: variables })
       try {
+        const res = await createNewArticle({ input: variables })
         const newRecord = res.data?.createArticle
         if (!newRecord) {
           throw new Error('error')

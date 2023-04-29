@@ -1,10 +1,11 @@
 import type { FC } from 'react'
 
 import { InlineIcon } from '@iconify/react'
+import dayjs from 'dayjs'
 
 import type { ArticleModel } from '@/components/domains/Article'
 
-import { deleteArticle } from '@/components/domains/Article/ArticleCard/api/delete-article'
+import { useDeleteArticle } from '@/components/domains/Article/ArticleCard/api/delete-article'
 import { doneArticle } from '@/components/domains/Article/ArticleCard/api/done-article'
 export const ArticleCard: FC<ArticleModel> = ({
   title,
@@ -12,6 +13,8 @@ export const ArticleCard: FC<ArticleModel> = ({
   createdAt,
   id,
 }) => {
+  const { deleteArticle } = useDeleteArticle()
+
   return (
     <div className="w-80 rounded-2xl border-4 border-black p-4 shadow-xl">
       <div className="h-16">
@@ -20,17 +23,19 @@ export const ArticleCard: FC<ArticleModel> = ({
         </h1>
       </div>
       <div className="mt-2  flex items-center justify-between">
-        <p className="text-xl font-bold leading-none">{createdAt.getDate()}</p>
+        <p className="text-xl font-bold leading-none">
+          {dayjs(createdAt).month()}
+        </p>
         <div className="flex gap-2 text-3xl">
           <button
-            onClick={() => deleteArticle(id)}
+            onClick={() => doneArticle(id)}
             aria-label="done reading"
             className="hover:text-green-600"
           >
             <InlineIcon icon={'mdi:check-circle'} />
           </button>
           <button
-            onClick={() => doneArticle(id)}
+            onClick={() => deleteArticle(id)}
             aria-label="delete article"
             className="hover:text-red-600"
           >

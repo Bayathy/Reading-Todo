@@ -1,6 +1,6 @@
 import { graphql } from '@/gql'
 
-export const deleteArticle = graphql(`
+export const deleteArticleMutation = graphql(`
   mutation DeleteArticle($input: ArticleIDInput) {
     deleteArticle(input: $input) {
       id

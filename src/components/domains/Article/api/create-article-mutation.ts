@@ -1,6 +1,6 @@
 import { graphql } from '@/gql'
 
-export const createArticle = graphql(`
+export const createArticleMutation = graphql(`
   mutation CreateArticle($input: NewArticle!) {
     createArticle(input: $input) {
       id
