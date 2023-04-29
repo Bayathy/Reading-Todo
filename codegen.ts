@@ -11,8 +11,14 @@ const config: CodegenConfig = {
   generates: {
     './src/gql/': {
       preset: 'client',
+      config: {
+        scalars: {
+          ID: 'number',
+        },
+      },
     },
   },
+  overwrite: true,
 }
 
 export default config

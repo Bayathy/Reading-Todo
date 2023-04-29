@@ -55,6 +55,7 @@ export const useCreateArticleForm = () => {
         if (error instanceof Error) console.log(error.message)
       }
     },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   )
   return {
