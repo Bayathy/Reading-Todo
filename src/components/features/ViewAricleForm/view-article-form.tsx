@@ -1,11 +1,22 @@
 import type { FC } from 'react'
+import { useEffect } from 'react'
 
-import { useArticleForm } from '@/components/features/ViewAricleForm/api/useArticleForm'
-import { Button } from '@/components/ui'
+import { useCreateArticleForm } from '@/components/features/ViewAricleForm/api/useCreateArticleForm'
+import { Button } from '@/components/shared/ui'
 
 export const ViewArticleForm: FC = () => {
-  const { register, handleSubmit, onArticleFormSubmit, isValid, isDirty } =
-    useArticleForm()
+  const {
+    register,
+    handleSubmit,
+    onArticleFormSubmit,
+    isValid,
+    isDirty,
+    newArticleResult,
+  } = useCreateArticleForm()
+
+  useEffect(() => {
+    console.log(newArticleResult)
+  }, [newArticleResult])
 
   return (
     <div>
@@ -25,14 +36,6 @@ export const ViewArticleForm: FC = () => {
             placeholder={'https://'}
             {...register('url', { required: true })}
             required
-          />
-          <label htmlFor="title">タイトルを入力</label>
-          <input
-            id="title"
-            className="h-12 rounded-md border-2 px-2 text-lg"
-            aria-label="input url"
-            type="text"
-            {...register('title', { required: true })}
           />
         </div>
         <div className={'mt-4 flex justify-end'}>
