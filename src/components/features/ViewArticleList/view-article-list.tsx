@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil'
 import { useQuery } from 'urql'
 
 import { ArticleCardList } from '@/components/domains/Article'
-import { getArticlesQuery } from '@/components/domains/Article/api/get-article-mutation'
+import { getArticlesQuery } from '@/components/shared/api/graphql/get-article-mutation'
 import { articleListStore } from '@/components/shared/store/article-store'
 
 export const ViewArticleList: FC = () => {

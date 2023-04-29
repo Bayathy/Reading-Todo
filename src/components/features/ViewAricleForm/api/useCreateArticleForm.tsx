@@ -8,7 +8,7 @@ import * as z from 'zod'
 import type { NewArticle } from '@/gql/graphql'
 import type { SubmitHandler } from 'react-hook-form'
 
-import { createArticleMutation } from '@/components/domains/Article/api/create-article-mutation'
+import { createArticleMutation } from '@/components/shared/api/graphql/create-article-mutation'
 import { articleListStore } from '@/components/shared/store/article-store'
 
 const scheme = z.object({

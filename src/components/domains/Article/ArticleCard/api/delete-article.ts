@@ -1,6 +1,6 @@
 import { useMutation } from 'urql'
 
-import { deleteArticleMutation } from '@/components/domains/Article/api/delete-article-mutation'
+import { deleteArticleMutation } from '@/components/shared/api/graphql/delete-article-mutation'
 
 export const useDeleteArticle = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
