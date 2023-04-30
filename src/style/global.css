@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
-
+@import "@fontsource/sawarabi-gothic";
 @tailwind base; /* Preflight will be injected here */
 @tailwind components;
 @tailwind utilities;

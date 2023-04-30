@@ -1,15 +1,25 @@
+import * as dotenv from 'dotenv'
 import { CodegenConfig } from '@graphql-codegen/cli'
+import * as process from 'process'
+
+dotenv.config()
 
 const config: CodegenConfig = {
-  schema: 'https://api-server-o64jfqpzua-uw.a.run.app/query',
-  documents: ['src/**/*.tsx'],
+  schema: process.env.VITE_API_SERVER_URL,
+  documents: ['src/**/*.tsx', 'src/**/*.ts'],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
     './src/gql/': {
       preset: 'client',
-      plugins: [],
+      config: {
+        scalars: {
+          ID: 'number',
+          DateTime: 'string',
+        },
+      },
     },
   },
+  overwrite: true,
 }
 
 export default config

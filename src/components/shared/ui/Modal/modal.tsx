@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { forwardRef } from 'react'
 
-import { Button } from '@/components/ui'
+import { Button } from '@/components/shared/ui'
 
 export type ModalProps = { onClose: () => void } & PropsWithChildren
 
@@ -12,7 +12,9 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
       <dialog className={'m-auto w-4/5 max-w-2xl rounded-md'} ref={ref}>
         <div className="m-4">
           <div className="flex justify-end">
-            <Button onClick={onClose} label={'Close'} color={'primary'} />
+            <Button onClick={onClose} color={'primary'}>
+              閉じる
+            </Button>
           </div>
           {children}
         </div>

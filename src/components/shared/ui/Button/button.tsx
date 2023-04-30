@@ -1,12 +1,25 @@
-import type { ComponentProps, FC } from 'react'
+import type { ComponentProps, FC, PropsWithChildren } from 'react'
 
 export type ButtonProps = {
-  label: string
   color?: 'primary' | 'secondary' | 'disabled'
-} & ComponentProps<'button'>
+} & ComponentProps<'button'> &
+  PropsWithChildren
 
 const baseStyle = 'rounded-md py-2 px-4 outline-2 outline shadow-lg'
-export const Button: FC<ButtonProps> = ({ label, color, ...rest }) => {
+export const Button: FC<ButtonProps> = ({
+  children,
+  color,
+  disabled,
+  ...rest
+}) => {
+  if (disabled) {
+    return (
+      <button className={`bg-gray-300 text-white ${baseStyle}`} {...rest}>
+        {children}
+      </button>
+    )
+  }
+
   switch (color) {
     case 'primary': {
       return (
@@ -14,34 +27,34 @@ export const Button: FC<ButtonProps> = ({ label, color, ...rest }) => {
           className={`bg-blue-500 text-white shadow-2xl outline-blue-500 hover:bg-blue-400 ${baseStyle}`}
           {...rest}
         >
-          {label}
+          {children}
         </button>
       )
     }
     case 'secondary': {
       return (
         <button
-          className={`text-blue-500 outline-blue-300 hover:text-blue-400 hover:outline-blue-200 ${baseStyle}`}
+          className={`text-blue-700 outline-blue-300 hover:text-blue-400 hover:outline-blue-200 ${baseStyle}`}
           {...rest}
         >
-          {label}
+          {children}
         </button>
       )
     }
     case 'disabled': {
       return (
         <button className={`bg-gray-300 text-white ${baseStyle}`} {...rest}>
-          {label}
+          {children}
         </button>
       )
     }
     default: {
       return (
         <button
-          className={`text-white outline-blue-500 hover:bg-blue-400 ${baseStyle}`}
+          className={`bg-blue-500 text-white shadow-2xl outline-blue-500 hover:bg-blue-400 ${baseStyle}`}
           {...rest}
         >
-          {label}
+          {children}
         </button>
       )
     }

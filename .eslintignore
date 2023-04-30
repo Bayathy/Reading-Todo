@@ -1,2 +1,4 @@
 tailwind.config.cjs
 postcss.config.cjs
+codegen.ts
+src/gql

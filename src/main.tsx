@@ -2,17 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import '@/style/global.css'
-import { Home } from 'src/components/pages'
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line unicorn/prefer-top-level-await
-  ;(async () => {
-    import('./mocks/browser').then(m => m.worker.start())
-  })()
-}
+import { Home } from '@/components/pages'
+import { GqlProvider, StoreProvider } from '@/components/providers'
 
 ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <React.StrictMode>
-    <Home />
+    <StoreProvider>
+      <GqlProvider>
+        <Home />
+      </GqlProvider>
+    </StoreProvider>
   </React.StrictMode>,
 )
