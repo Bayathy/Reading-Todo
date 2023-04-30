@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import type { ArticleModel } from '@/components/domains/Article'
 
 import { useDeleteArticle } from '@/components/domains/Article/ArticleCard/api/delete-article'
-import { doneArticle } from '@/components/domains/Article/ArticleCard/api/done-article'
+import { useUpdateArticle } from '@/components/domains/Article/ArticleCard/api/done-article'
 export const ArticleCard: FC<ArticleModel> = ({
   title,
   url,
@@ -14,6 +14,7 @@ export const ArticleCard: FC<ArticleModel> = ({
   id,
 }) => {
   const { deleteArticle } = useDeleteArticle()
+  const { updateArticle } = useUpdateArticle()
 
   return (
     <div className="w-80 rounded-2xl border-4 border-black p-4 shadow-xl">
@@ -28,7 +29,7 @@ export const ArticleCard: FC<ArticleModel> = ({
         </p>
         <div className="flex gap-2 text-3xl">
           <button
-            onClick={() => doneArticle(id)}
+            onClick={() => updateArticle(id)}
             aria-label="done reading"
             className="hover:text-green-600"
           >

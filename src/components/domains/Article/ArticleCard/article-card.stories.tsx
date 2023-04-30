@@ -15,6 +15,6 @@ export const Default: Story = {
   args: {
     id: 1,
     url: '/',
-    createdAt: new Date('2022-12-31T13:50:40+09:00'),
+    createdAt: '2022-12-31T13:50:40+09:00',
   },
 }

@@ -16,6 +16,7 @@ const documents = {
     "\n  mutation CreateArticle($input: NewArticle!) {\n    createArticle(input: $input) {\n      id\n      title\n      userId\n      url\n      createdAt\n      done\n    }\n  }\n": types.CreateArticleDocument,
     "\n  mutation DeleteArticle($input: ArticleIDInput) {\n    deleteArticle(input: $input) {\n      id\n    }\n  }\n": types.DeleteArticleDocument,
     "\n  query getAllArticles {\n    articles {\n      id\n      title\n      url\n      userId\n      done\n      createdAt\n    }\n  }\n": types.GetAllArticlesDocument,
+    "\n  mutation UpdateArticle($input: UpdateArticle!) {\n    updateArticle(input: $input) {\n      id\n      title\n      done\n    }\n  }\n": types.UpdateArticleDocument,
 };
 
 /**
@@ -44,6 +45,10 @@ export function graphql(source: "\n  mutation DeleteArticle($input: ArticleIDInp
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query getAllArticles {\n    articles {\n      id\n      title\n      url\n      userId\n      done\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  query getAllArticles {\n    articles {\n      id\n      title\n      url\n      userId\n      done\n      createdAt\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  mutation UpdateArticle($input: UpdateArticle!) {\n    updateArticle(input: $input) {\n      id\n      title\n      done\n    }\n  }\n"): (typeof documents)["\n  mutation UpdateArticle($input: UpdateArticle!) {\n    updateArticle(input: $input) {\n      id\n      title\n      done\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
