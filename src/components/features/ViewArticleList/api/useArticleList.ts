@@ -1,13 +1,15 @@
 import { useCallback, useEffect } from 'react'
 
-import { useRecoilState } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { useQuery } from 'urql'
 
 import { articleListStore } from '@/components/domains/Article'
 import { getArticlesQuery } from '@/components/shared/api'
+import { articleListSelector } from '@/components/shared/store/article-store'
 
 export const useArticleList = () => {
-  const [articleList, setArticleList] = useRecoilState(articleListStore)
+  const setArticleList = useSetRecoilState(articleListStore)
+  const articleList = useRecoilValue(articleListSelector)
 
   const [{ data }] = useQuery({ query: getArticlesQuery })
   const setArticleListStore = useCallback(() => {
