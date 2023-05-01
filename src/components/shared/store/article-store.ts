@@ -1,8 +1,21 @@
-import { atom } from 'recoil'
+import { atom, selector } from 'recoil'
 
-import type { ArticleModel } from '@/components/domains/Article'
+import type { filterMode } from '@/components/shared/store/types'
 
-export const articleListStore = atom<ArticleModel[]>({
-  key: 'articleListStore',
-  default: [],
+import { articleListStore } from '@/components/domains/Article/store/article-store'
+
+export const articleFilterState = atom<filterMode>({
+  key: 'ArticleFilterState',
+  default: 'NotRead',
+})
+
+export const articleListSelector = selector({
+  key: 'articleListSelector',
+  get: ({ get }) => {
+    const filterMode = get(articleFilterState)
+    const articleList = get(articleListStore)
+    return filterMode === 'Done'
+      ? articleList.filter(article => article.done)
+      : articleList.filter(article => !article.done)
+  },
 })
