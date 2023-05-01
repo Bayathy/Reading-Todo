@@ -1,5 +1,5 @@
 export type ArticleModel = {
-  id: number
+  id: string
   title: string
   url: string
   done: boolean
