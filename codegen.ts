@@ -13,7 +13,6 @@ const config: CodegenConfig = {
       preset: 'client',
       config: {
         scalars: {
-          ID: 'number',
           DateTime: 'string',
         },
       },
