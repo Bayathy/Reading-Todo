@@ -1,15 +1,18 @@
+import { useRecoilState } from 'recoil'
 import { useMutation } from 'urql'
 
 import { deleteArticleMutation } from '@/components/shared/api/graphql/delete-article-mutation'
+import { articleListStore } from '@/components/shared/store/article-store'
 
 export const useDeleteArticle = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [deleteArticleResult, deleteFn] = useMutation(deleteArticleMutation)
-
-  const deleteArticle = (id: number) => {
+  const [articleList, setArticleList] = useRecoilState(articleListStore)
+  const deleteArticle = (id: string) => {
     deleteFn({ input: { id: id } })
-      .then(data => {
-        console.log(data.data)
+      .then(() => {
+        const newList = articleList.filter(article => article.id != id)
+        setArticleList(() => [...newList])
       })
       .catch(error => {
         console.log(error)

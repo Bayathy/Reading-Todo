@@ -1,22 +1,11 @@
 import type { FC } from 'react'
-import { useEffect } from 'react'
 
 import { useCreateArticleForm } from '@/components/features/ViewAricleForm/api/useCreateArticleForm'
 import { Button } from '@/components/shared/ui'
 
 export const ViewArticleForm: FC = () => {
-  const {
-    register,
-    handleSubmit,
-    onArticleFormSubmit,
-    isValid,
-    isDirty,
-    newArticleResult,
-  } = useCreateArticleForm()
-
-  useEffect(() => {
-    console.log(newArticleResult)
-  }, [newArticleResult])
+  const { register, handleSubmit, onArticleFormSubmit, isValid, isDirty } =
+    useCreateArticleForm()
 
   return (
     <div>

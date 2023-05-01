@@ -5,7 +5,7 @@ import { updateArticleMutation } from '@/components/shared/api/graphql'
 export const useUpdateArticle = () => {
   const [updateArticleResult, updateFn] = useMutation(updateArticleMutation)
 
-  const updateArticle = (id: number) => {
+  const updateArticle = (id: string) => {
     updateFn({ input: { id: id, done: true } })
       .then(data => console.log(data))
       .catch(error => console.log(error))
