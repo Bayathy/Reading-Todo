@@ -1,26 +1,10 @@
 import type { FC } from 'react'
-import { useEffect } from 'react'
-
-import { useRecoilState } from 'recoil'
-import { useQuery } from 'urql'
 
 import { ArticleCardList } from '@/components/domains/Article'
-import { getArticlesQuery } from '@/components/shared/api/graphql/get-article-mutation'
-import { articleListStore } from '@/components/shared/store/article-store'
+import { useArticleList } from '@/components/features/ViewArticleList/api/useArticleList'
 
 export const ViewArticleList: FC = () => {
-  const [articleList, setArticleList] = useRecoilState(articleListStore)
-
-  const [{ data }] = useQuery({ query: getArticlesQuery })
-
-  useEffect(() => {
-    // eslint-disable-next-line no-unsafe-optional-chaining
-    if (data?.articles) {
-      console.log(...data.articles)
-      setArticleList(() => [...data.articles])
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.articles])
+  const { articleList } = useArticleList()
 
   return articleList ? (
     <ArticleCardList articleList={articleList} />

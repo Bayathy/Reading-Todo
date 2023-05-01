@@ -8,8 +8,8 @@ import * as z from 'zod'
 import type { NewArticle } from '@/gql/graphql'
 import type { SubmitHandler } from 'react-hook-form'
 
+import { articleListStore } from '@/components/domains/Article'
 import { createArticleMutation } from '@/components/shared/api/graphql/create-article-mutation'
-import { articleListStore } from '@/components/shared/store/article-store'
 
 const scheme = z.object({
   url: z.string().min(1, { message: 'url is Required' }),
@@ -45,7 +45,7 @@ export const useCreateArticleForm = () => {
         setArticleList(oldList => [
           ...oldList,
           {
-            id: Number(newRecord.id),
+            id: newRecord.id,
             title: newRecord.title,
             url: newRecord.url,
             userId: newRecord.userId,

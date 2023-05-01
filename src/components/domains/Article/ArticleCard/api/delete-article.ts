@@ -2,7 +2,8 @@ import { useRecoilState } from 'recoil'
 import { useMutation } from 'urql'
 
 import { deleteArticleMutation } from '@/components/shared/api/graphql/delete-article-mutation'
-import { articleListStore } from '@/components/shared/store/article-store'
+import {} from '@/components/shared/store/article-store'
+import { articleListStore } from '@/components/domains/Article'
 
 export const useDeleteArticle = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
