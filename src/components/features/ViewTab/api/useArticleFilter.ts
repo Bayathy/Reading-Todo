@@ -10,6 +10,7 @@ export const useArticleFilter = () => {
     (mode: typeof filterMode) => {
       setStoreFilterMode(mode)
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [filterMode],
   )
   return { setFilterMode }
