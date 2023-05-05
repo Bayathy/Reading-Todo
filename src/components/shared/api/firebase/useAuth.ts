@@ -10,10 +10,12 @@ import {
 
 import type { User } from 'firebase/auth'
 
+import { app } from '@/components/shared/api/firebase/init'
+
 export const useAuth = () => {
   // eslint-disable-next-line unicorn/no-null
   const [authState, setAuthState] = useState<User | null>(null)
-  const auth = getAuth()
+  const auth = getAuth(app)
   onAuthStateChanged(auth, user => {
     if (user) {
       setAuthState(user)
