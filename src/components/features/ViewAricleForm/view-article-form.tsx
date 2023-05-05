@@ -1,12 +1,13 @@
 import type { FC } from 'react'
 
 import { useCreateArticleForm } from '@/components/features/ViewAricleForm/api/useCreateArticleForm'
+import { useAuth } from '@/components/shared/api'
 import { Button } from '@/components/shared/ui'
 
 export const ViewArticleForm: FC = () => {
   const { register, handleSubmit, onArticleFormSubmit, isValid, isDirty } =
     useCreateArticleForm()
-
+  const { auth } = useAuth()
   return (
     <div>
       <form
@@ -24,12 +25,14 @@ export const ViewArticleForm: FC = () => {
             type="text"
             placeholder={'https://'}
             {...register('url', { required: true })}
-            required
           />
         </div>
         <div className={'mt-4 flex justify-end'}>
           <Button disabled={!(isDirty && isValid)} color={'primary'}>
             保存する
+          </Button>
+          <Button onClick={() => console.log(auth.currentUser?.uid)}>
+            Test
           </Button>
         </div>
       </form>
