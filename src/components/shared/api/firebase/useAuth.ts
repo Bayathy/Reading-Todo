@@ -1,26 +1,26 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 import {
-  getAuth,
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  onAuthStateChanged,
+  getAuth,
 } from 'firebase/auth'
 
-import { app } from '@/components/shared/api/firebase/init'
+import type { User } from 'firebase/auth'
 
 export const useAuth = () => {
   // eslint-disable-next-line unicorn/no-null
-  // const [authState, setAuthState] = useState<User | null>(null)
-  const auth = getAuth(app)
-
-  // onAuthStateChanged(auth, user => {
-  //   if (user) {
-  //     setAuthState(user)
-  //   } else {
-  //     setAuthState(null)
-  //   }
-  // })
+  const [authState, setAuthState] = useState<User | null>(null)
+  const auth = getAuth()
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      setAuthState(user)
+    } else {
+      setAuthState(null)
+    }
+  })
 
   const provider = new GoogleAuthProvider()
   const loginWithPopUp = useCallback(
@@ -32,5 +32,5 @@ export const useAuth = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const logout = useCallback(async () => await signOut(auth), [])
 
-  return { auth, loginWithPopUp, logout }
+  return { authState, loginWithPopUp, logout }
 }

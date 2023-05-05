@@ -31,7 +31,7 @@ export const useCreateArticleForm = () => {
     defaultValues: { url: '' },
   })
   const setArticleList = useSetRecoilState(articleListStore)
-  const { auth } = useAuth()
+  const { authState } = useAuth()
 
   const [newArticleResult, createNewArticle] = useMutation(
     createArticleMutation,
@@ -41,7 +41,7 @@ export const useCreateArticleForm = () => {
     async data => {
       const variables: NewArticle = {
         // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain,@typescript-eslint/no-non-null-assertion
-        userId: auth.currentUser?.uid!,
+        userId: authState?.uid!,
         url: data.url,
       }
       try {
