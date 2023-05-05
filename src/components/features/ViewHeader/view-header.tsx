@@ -7,14 +7,14 @@ export type HeaderProps = {
   text: string
 }
 export const ViewHeader: FC<HeaderProps> = ({ text }) => {
-  const { auth, loginWithPopUp, logout } = useAuth()
+  const { authState, loginWithPopUp, logout } = useAuth()
 
   return (
     <header className="h-16 w-full border-b-2">
       <div className="flex h-full items-center justify-between px-4">
         <h1 className="text-2xl">{text}</h1>
         <div>
-          {auth ? (
+          {authState ? (
             <Button color={'secondary'} onClick={() => logout()}>
               ログアウト
             </Button>

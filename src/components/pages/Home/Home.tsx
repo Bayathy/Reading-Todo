@@ -10,13 +10,13 @@ import { useModal } from '@/components/shared/ui/Modal/api/useModal'
 
 export const Home: FC = () => {
   const { ref, showModal, closeModal } = useModal()
-  const { auth } = useAuth()
+  const { authState } = useAuth()
 
   return (
     <div className="grid min-h-screen w-full grid-cols-[100%] grid-rows-[auto_1fr]">
       <ViewHeader text={'Dash Board'} />
       <main className="relative m-auto h-full w-full px-4">
-        {auth ? (
+        {authState ? (
           <>
             <div className="mt-4 flex justify-end">
               <Button
