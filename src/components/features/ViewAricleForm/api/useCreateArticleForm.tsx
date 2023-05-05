@@ -3,19 +3,23 @@ import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useSetRecoilState } from 'recoil'
 import { useMutation } from 'urql'
-import * as z from 'zod'
 
 import type { NewArticle } from '@/gql/graphql'
 import type { SubmitHandler } from 'react-hook-form'
 
 import { articleListStore } from '@/components/domains/Article'
+import { useAuth } from '@/components/shared/api'
 import { createArticleMutation } from '@/components/shared/api/graphql/create-article-mutation'
 
-const scheme = z.object({
-  url: z.string().min(1, { message: 'url is Required' }),
-})
+// const scheme = z.object({
+//   url: z.string().min(1, { message: 'url is Required' }),
+// })
+//
+// type ArticleFormState = z.infer<typeof scheme>
 
-type ArticleFormState = z.infer<typeof scheme>
+type ArticleFormState = {
+  url: string
+}
 
 export const useCreateArticleForm = () => {
   const {
@@ -27,6 +31,7 @@ export const useCreateArticleForm = () => {
     defaultValues: { url: '' },
   })
   const setArticleList = useSetRecoilState(articleListStore)
+  const { auth } = useAuth()
 
   const [newArticleResult, createNewArticle] = useMutation(
     createArticleMutation,
@@ -34,7 +39,11 @@ export const useCreateArticleForm = () => {
   // eslint-disable-next-line unicorn/consistent-function-scoping
   const onArticleFormSubmit: SubmitHandler<ArticleFormState> = useCallback(
     async data => {
-      const variables: NewArticle = { userId: 'test', url: data.url }
+      const variables: NewArticle = {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain,@typescript-eslint/no-non-null-assertion
+        userId: auth.currentUser?.uid!,
+        url: data.url,
+      }
       try {
         const res = await createNewArticle({ input: variables })
         const newRecord = res.data?.createArticle
