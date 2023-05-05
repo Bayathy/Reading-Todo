@@ -18,7 +18,7 @@ export default defineConfig({
         scope: '/',
         start_url: '/',
         name: 'Reading-Todo',
-        short_name: 'Memo',
+        short_name: '積読消化',
         description:
           '\u7a4d\u8aad\u9632\u6b62\u7528\u30c4\u30fc\u30eb\u3067\u3059',
         icons: [
@@ -44,6 +44,15 @@ export default defineConfig({
             purpose: 'any maskable',
           },
         ],
+        share_target: {
+          action: '/',
+          method: 'POST',
+          params: {
+            title: 'title',
+            text: 'text',
+            url: 'url',
+          },
+        },
       },
     }),
   ],
