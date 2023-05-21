@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@fontsource/sawarabi-gothic':
-    specifier: ^4.5.9
-    version: 4.5.9
+    specifier: ^5.0.0
+    version: 5.0.0
   '@radix-ui/react-dialog':
     specifier: ^1.0.3
     version: 1.0.3(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
@@ -2239,8 +2239,8 @@ packages:
     resolution: {integrity: sha512-BpiZLBWdLFw+qFel9p3Zs1jD6QmH7Ii4aTDu6+vx8ShdidChZUXqDhYJly4ZjSgQh54miXbBgBrk0S+jTIh/Qg==}
     dev: false
 
-  /@fontsource/sawarabi-gothic@4.5.9:
-    resolution: {integrity: sha512-LsXeDwLnaZ1b8O/GmX2Vlb52n70k/qE0kI5aCc7d9lTCCuV1MrBOnJIsnB8DOHsdkdJIogIjcZvBrhLEc6KOFA==}
+  /@fontsource/sawarabi-gothic@5.0.0:
+    resolution: {integrity: sha512-2jt2P8STnNu0vEKAk3wS06ujS/keVWXFf9cjNoKr3K4/ADn+6qH7f3/RAkS3fF8kDPDPocMQu46Cz6GjCaht9A==}
     dev: false
 
   /@graphql-codegen/add@4.0.1(graphql@16.6.0):

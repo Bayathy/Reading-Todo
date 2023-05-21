@@ -16,7 +16,7 @@
     "markuplint": "markuplint \\\"./src/**/*.{jsx,tsx}\\\""
   },
   "dependencies": {
-    "@fontsource/sawarabi-gothic": "^4.5.9",
+    "@fontsource/sawarabi-gothic": "^5.0.0",
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.3",
     "@urql/core": "^4.0.4",
